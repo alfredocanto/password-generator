@@ -1,0 +1,115 @@
+.settings-form {
+  background-color: #f5f5f5;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  animation: slideIn 0.3s ease;
+  text-align: center;
+  z-index: 1000;
+}
+
+.settings-form.open {
+  max-height: 400px;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  padding: 0;
+}
+
+.settings-header {
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 0;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 20px;
+}
+
+.settings-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 15px;
+}
+
+.settings-inputs::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.input[type="checkbox"] {
+  display: none;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.toggle .input {
+  display: none;
+}
+
+.slider {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+  flex-shrink: 0;
+  float: left;
+}
+
+.slider:before {
+  content: "";
+  height: 22px;
+  width: 22px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+.input:checked+.slider {
+  background-color: #2ecc71;
+}
+
+.input:checked+.slider:before {
+  transform: translateX(22px) translateY(-50%);
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, -70%);
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
