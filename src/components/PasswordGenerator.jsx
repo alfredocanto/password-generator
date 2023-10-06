@@ -102,6 +102,7 @@ function PasswordGenerator() {
             value={generatedPassword}
             readOnly
             ref={passwordInputRef}
+            id = 'password-field'
           />
           <button className='copy-btn' onClick={copyToClipboard}>
             <FaRegCopy />

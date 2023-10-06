@@ -24,6 +24,7 @@ const Settings = ({
             type="checkbox"
             checked={includeUppercase}
             onChange={() => setIncludeUppercase(!includeUppercase)}
+            id = 'uppercase'
           />
           <span className='slider'></span>
           Uppercase
@@ -34,6 +35,7 @@ const Settings = ({
             type="checkbox"
             checked={includeLowercase}
             onChange={() => setIncludeLowercase(!includeLowercase)}
+            id = 'lowercase'
           />
           <span className='slider'></span>
           Lowercase
@@ -44,6 +46,7 @@ const Settings = ({
             type="checkbox"
             checked={includeNumbers}
             onChange={() => setIncludeNumbers(!includeNumbers)}
+            id = 'numbers'
           />
           <span className='slider'></span>
           Numbers
@@ -54,11 +57,12 @@ const Settings = ({
             type="checkbox"
             checked={includeSymbols}
             onChange={() => setIncludeSymbols(!includeSymbols)}
+            id = 'symbols'
           />
           <span className='slider'></span>
           Symbols
         </label>
-        <label className='label length'>
+        <label htmlFor='length' className='label length'>
           Length: {passwordLength}
         </label>
         <input
@@ -68,6 +72,7 @@ const Settings = ({
           max="64"
           value={passwordLength}
           onChange={(e) => setPasswordLength(parseInt(e.target.value))}
+          id="length"
         />
       </div>
     </div>
